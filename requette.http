@@ -1,0 +1,56 @@
+//creation admin
+curl -X POST http://localhost:3000/api/auth/create-admin \
+  -H "Content-Type: application/json" \
+  -d '{
+    "username": "admin",
+    "email": "admin@gmail.com",
+    "password": "mdp123"}
+
+
+//login admin
+curl -X POST http://localhost:3000/api/auth/admin \
+  -H "Content-Type: application/json" \
+  -d '{
+    "username": "admin",
+    "password": "mdp123"
+  }'
+
+
+
+//creation de utilisateur/technician
+curl -X POST http://localhost:3000/api/auth/new \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNzQ0NTkxODY4LCJleHAiOjE3NDQ1OTU0Njh9.us0SAopgxJHRpuZOmSIzv9wmhKiVr9LepJ4_mLm5XTg" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "username": "alex",
+    "email": "alex@gmail.com",
+    "password": "mdp123alex",
+    "role": "user"
+  }'
+
+
+curl -X POST http://localhost:3000/api/auth/new \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNzQ0NTkxODY4LCJleHAiOjE3NDQ1OTU0Njh9.us0SAopgxJHRpuZOmSIzv9wmhKiVr9LepJ4_mLm5XTg" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "username": "alex tech",
+    "email": "technician@gmail.com",
+    "password": "mdp123technician",
+    "role": "technician"
+  }'
+
+
+//login user ou technician
+curl -X POST http://localhost:3000/api/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{
+    "username": "alex",
+    "password": "mdp123alex"
+  }'
+
+  curl -X POST http://localhost:3000/api/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{
+    "username": "alex tech",
+    "password": "mdp123technician"
+  }'
