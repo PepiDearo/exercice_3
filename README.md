@@ -5,26 +5,26 @@ Cet exercice consiste a developper un api qui permet a des utilisateurs de soume
 
 
 ## Fonctionalites
--Creation d'un administrateur
--Login d'un administrateur
--Creation d'utilisateur/technician
--Login d'un utilisateur/technician
--Creation de tickets
--Recuperation de tickets (La liste de tickets au complet, au par son ID)
--Mettre a jour un ticket
--Suppresion d'un ticket
+Creation d'un administrateur
+Login d'un administrateur
+Creation d'utilisateur/technician
+Login d'un utilisateur/technician
+Creation de tickets
+Recuperation de tickets (La liste de tickets au complet, au par son ID)
+Mettre a jour un ticket
+Suppression d'un ticket
 
--Creation de base de donnees
+Creation de base de donnees
 
 
 ## Extensions et dependances necessaires pour ce projet
-- Il faut avoir Node, Express, Sqlite3, Knex , bycrypt, jsonwebtoken, express-validator et l'extension REST Client (Pour les requetes http)
+Il faut avoir Node, Express, Sqlite3, Knex , bycrypt, jsonwebtoken, express-validator et l'extension REST Client (Pour les requetes http)
 
--Pour installer, aller sur le terminal et tapez la commande suivante pour installer les modules
+Pour installer, aller sur le terminal et tapez la commande suivante pour installer les modules
 
 npm install node express sqlite3 knex bycrypt jsonwebtoken express-validator
 
--Chercher et installer l'extension REST Client
+Chercher et installer l'extension REST Client
 
 
 ## Fichier creation_db.js
