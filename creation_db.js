@@ -8,7 +8,7 @@ const knex = require('knex')({
   });
 
 
-  //fonction pour creer les base de donnes comptes et transactions avec les parametres necessaires
+  //creation des bases de donnees user et tickets
   async function creationDatabase() {
     try {
       await knex.schema.createTable('users', (table) => {

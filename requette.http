@@ -1,4 +1,4 @@
-//creation admin
+# creation admin
 curl -X POST http://localhost:3000/api/auth/create-admin \
   -H "Content-Type: application/json" \
   -d '{
@@ -7,7 +7,7 @@ curl -X POST http://localhost:3000/api/auth/create-admin \
     "password": "mdp123"}
 
 
-//login admin
+# login admin
 curl -X POST http://localhost:3000/api/auth/admin \
   -H "Content-Type: application/json" \
   -d '{
@@ -19,7 +19,7 @@ curl -X POST http://localhost:3000/api/auth/admin \
 
 //creation de utilisateur/technician
 curl -X POST http://localhost:3000/api/auth/new \
-  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNzQ0NTkxODY4LCJleHAiOjE3NDQ1OTU0Njh9.us0SAopgxJHRpuZOmSIzv9wmhKiVr9LepJ4_mLm5XTg" \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNzQ0NTk2MTM5LCJleHAiOjE3NDQ1OTk3Mzl9.ttD3jZFGldPbd-J4gArr57gbqy7BGr3roprFaV24T-o" \
   -H "Content-Type: application/json" \
   -d '{
     "username": "alex",
@@ -30,7 +30,7 @@ curl -X POST http://localhost:3000/api/auth/new \
 
 
 curl -X POST http://localhost:3000/api/auth/new \
-  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNzQ0NTkxODY4LCJleHAiOjE3NDQ1OTU0Njh9.us0SAopgxJHRpuZOmSIzv9wmhKiVr9LepJ4_mLm5XTg" \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNzQ0NTk2MTM5LCJleHAiOjE3NDQ1OTk3Mzl9.ttD3jZFGldPbd-J4gArr57gbqy7BGr3roprFaV24T-o" \
   -H "Content-Type: application/json" \
   -d '{
     "username": "alex tech",
@@ -54,3 +54,106 @@ curl -X POST http://localhost:3000/api/auth/login \
     "username": "alex tech",
     "password": "mdp123technician"
   }'
+
+
+//creation de ticket:
+curl -X POST http://localhost:3000/api/tickets \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJhbGV4Iiwicm9sZSI6InVzZXIiLCJlbWFpbCI6ImFsZXhAZ21haWwuY29tIiwiaWF0IjoxNzQ0NTk2MTYzLCJleHAiOjE3NDQ1OTk3NjN9.od0_itfIh-nTZ1rPJr1RFVoy5BIzQfEGvB9PcZwWXPA"\
+  -H "Content-Type: application/json" \
+  -d '{
+    "title": "Problem wifi",
+    "description": "Impossible de connecter au wifi dans la chambre 2",
+    "userId": 2,
+    "status": "open"
+  }'
+
+  curl -X POST http://localhost:3000/api/tickets \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJhbGV4IHRlY2giLCJyb2xlIjoidGVjaG5pY2lhbiIsImVtYWlsIjoidGVjaG5pY2lhbkBnbWFpbC5jb20iLCJpYXQiOjE3NDQ1OTYxODAsImV4cCI6MTc0NDU5OTc4MH0.RTyuEnwWdQqijHyDdsKGw1R0wNXb-w3KftFriwEip4E" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "title": "Problem connexion serveur",
+    "description": "Impossible de connecter au minecraft serveur",
+    "userId": 2,
+    "technicianId": 3,
+    "status": "open"
+  }'
+
+  curl -X POST http://localhost:3000/api/tickets \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJhbGV4IHRlY2giLCJyb2xlIjoidGVjaG5pY2lhbiIsImVtYWlsIjoidGVjaG5pY2lhbkBnbWFpbC5jb20iLCJpYXQiOjE3NDQ1OTYxODAsImV4cCI6MTc0NDU5OTc4MH0.RTyuEnwWdQqijHyDdsKGw1R0wNXb-w3KftFriwEip4E" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "title": "Problem connexion serveur2",
+    "description": "Impossible de connecter au minecraft serveur2",
+    "userId": 3,
+    "technicianId": 3,
+    "status": "open"
+  }'
+
+
+
+
+
+//recuperation de la liste des tickets: 
+//technician
+
+curl -X GET http://localhost:3000/api/tickets \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJhbGV4IHRlY2giLCJyb2xlIjoidGVjaG5pY2lhbiIsImVtYWlsIjoidGVjaG5pY2lhbkBnbWFpbC5jb20iLCJpYXQiOjE3NDQ1OTYyMDQsImV4cCI6MTc0NDU5OTgwNH0.tcYFvgqK2nxnZEva7Z4yI-YIUv15Cidc3Lws2pz9pUs" \
+  -H "Content-Type: application/json"
+
+//user
+curl -X GET http://localhost:3000/api/tickets \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJhbGV4Iiwicm9sZSI6InVzZXIiLCJlbWFpbCI6ImFsZXhAZ21haWwuY29tIiwiaWF0IjoxNzQ0NTk1OTI5LCJleHAiOjE3NDQ1OTk1Mjl9.u24zitrzpwzYp1vCGT2SP4dcI1itxEMY-29NqAL5Di4" \
+  -H "Content-Type: application/json"
+
+
+  //recuperation de details de ticket
+  //technician
+  curl -X GET http://localhost:3000/api/tickets/2 \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJhbGV4IHRlY2giLCJyb2xlIjoidGVjaG5pY2lhbiIsImVtYWlsIjoidGVjaG5pY2lhbkBnbWFpbC5jb20iLCJpYXQiOjE3NDQ1OTYyMDQsImV4cCI6MTc0NDU5OTgwNH0.tcYFvgqK2nxnZEva7Z4yI-YIUv15Cidc3Lws2pz9pUs" \
+  -H "Content-Type: application/json"
+
+  //user //pas access a ce ticket
+  curl -X GET http://localhost:3000/api/tickets/3 \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJhbGV4Iiwicm9sZSI6InVzZXIiLCJlbWFpbCI6ImFsZXhAZ21haWwuY29tIiwiaWF0IjoxNzQ0NTk1OTI5LCJleHAiOjE3NDQ1OTk1Mjl9.u24zitrzpwzYp1vCGT2SP4dcI1itxEMY-29NqAL5Di4" \
+  -H "Content-Type: application/json"
+
+
+  //mis a jour dun ticket (technician seulement)
+  curl -X PUT http://localhost:3000/api/tickets/2 \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJhbGV4IHRlY2giLCJyb2xlIjoidGVjaG5pY2lhbiIsImVtYWlsIjoidGVjaG5pY2lhbkBnbWFpbC5jb20iLCJpYXQiOjE3NDQ1OTYyMDQsImV4cCI6MTc0NDU5OTgwNH0.tcYFvgqK2nxnZEva7Z4yI-YIUv15Cidc3Lws2pz9pUs" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "title": "Connexion impossible",
+    "description": "Utilisateur ne peut pas se connecter après MAJ",
+    "status": "closed",
+    "technicianId": 3,
+    "closedAt": "2025-04-13T17:00:00Z"
+  }'
+
+
+  # user (pas marcher)
+  curl -X PUT http://localhost:3000/api/tickets/2 \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJhbGV4Iiwicm9sZSI6InVzZXIiLCJlbWFpbCI6ImFsZXhAZ21haWwuY29tIiwiaWF0IjoxNzQ0NTk1OTI5LCJleHAiOjE3NDQ1OTk1Mjl9.u24zitrzpwzYp1vCGT2SP4dcI1itxEMY-29NqAL5Di4" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "title": "Connexion impossible",
+    "description": "Utilisateur ne peut pas se connecter après MAJ",
+    "status": "closed",
+    "technicianId": 3,
+    "closedAt": "2025-04-13T17:00:00Z"
+  }'
+
+
+
+  //delete un ticket seulement un admin peut faire cela;
+
+  //user qui essaie de delete:
+  curl -X DELETE http://localhost:3000/api/admin/tickets/2 \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJhbGV4Iiwicm9sZSI6InVzZXIiLCJlbWFpbCI6ImFsZXhAZ21haWwuY29tIiwiaWF0IjoxNzQ0NTk1OTI5LCJleHAiOjE3NDQ1OTk1Mjl9.u24zitrzpwzYp1vCGT2SP4dcI1itxEMY-29NqAL5Di4"
+
+//admin
+  curl -X DELETE http://localhost:3000/api/admin/tickets/2 \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNzQ0NTk2MTM5LCJleHAiOjE3NDQ1OTk3Mzl9.ttD3jZFGldPbd-J4gArr57gbqy7BGr3roprFaV24T-o"
+
+
+
