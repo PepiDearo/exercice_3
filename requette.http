@@ -17,7 +17,7 @@ curl -X POST http://localhost:3000/api/auth/admin \
 
 
 
-//creation de utilisateur/technician
+#creation de utilisateur/technician
 curl -X POST http://localhost:3000/api/auth/new \
   -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNzQ0NTk2MTM5LCJleHAiOjE3NDQ1OTk3Mzl9.ttD3jZFGldPbd-J4gArr57gbqy7BGr3roprFaV24T-o" \
   -H "Content-Type: application/json" \
@@ -40,6 +40,10 @@ curl -X POST http://localhost:3000/api/auth/new \
   }'
 
 
+
+
+
+
 //login user ou technician
 curl -X POST http://localhost:3000/api/auth/login \
   -H "Content-Type: application/json" \
@@ -54,6 +58,10 @@ curl -X POST http://localhost:3000/api/auth/login \
     "username": "alex tech",
     "password": "mdp123technician"
   }'
+
+
+
+
 
 
 //creation de ticket:
@@ -93,6 +101,9 @@ curl -X POST http://localhost:3000/api/tickets \
 
 
 
+
+
+
 //recuperation de la liste des tickets: 
 //technician
 
@@ -106,7 +117,19 @@ curl -X GET http://localhost:3000/api/tickets \
   -H "Content-Type: application/json"
 
 
+
+
+
+
+
+
+
+
+
+
   //recuperation de details de ticket
+
+
   //technician
   curl -X GET http://localhost:3000/api/tickets/2 \
   -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJhbGV4IHRlY2giLCJyb2xlIjoidGVjaG5pY2lhbiIsImVtYWlsIjoidGVjaG5pY2lhbkBnbWFpbC5jb20iLCJpYXQiOjE3NDQ1OTYyMDQsImV4cCI6MTc0NDU5OTgwNH0.tcYFvgqK2nxnZEva7Z4yI-YIUv15Cidc3Lws2pz9pUs" \
@@ -116,6 +139,11 @@ curl -X GET http://localhost:3000/api/tickets \
   curl -X GET http://localhost:3000/api/tickets/3 \
   -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJhbGV4Iiwicm9sZSI6InVzZXIiLCJlbWFpbCI6ImFsZXhAZ21haWwuY29tIiwiaWF0IjoxNzQ0NTk1OTI5LCJleHAiOjE3NDQ1OTk1Mjl9.u24zitrzpwzYp1vCGT2SP4dcI1itxEMY-29NqAL5Di4" \
   -H "Content-Type: application/json"
+
+
+
+
+
 
 
   //mis a jour dun ticket (technician seulement)
@@ -145,9 +173,13 @@ curl -X GET http://localhost:3000/api/tickets \
 
 
 
-  //delete un ticket seulement un admin peut faire cela;
 
-  //user qui essaie de delete:
+
+
+
+//delete un ticket seulement un admin peut faire cela;
+
+//user qui essaie de delete:
   curl -X DELETE http://localhost:3000/api/admin/tickets/2 \
   -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJhbGV4Iiwicm9sZSI6InVzZXIiLCJlbWFpbCI6ImFsZXhAZ21haWwuY29tIiwiaWF0IjoxNzQ0NTk1OTI5LCJleHAiOjE3NDQ1OTk1Mjl9.u24zitrzpwzYp1vCGT2SP4dcI1itxEMY-29NqAL5Di4"
 
