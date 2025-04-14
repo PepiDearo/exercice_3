@@ -1,17 +1,24 @@
 ## But du projet
-Cet exercice consiste a developper un api qui permet a des utilisateurs de soumettre des tickets
+Cet exercice consiste a developper un API qui permet a des utilisateurs de soumettre des tickets
 
 
 
 
 ## Fonctionalites
 Creation d'un administrateur
+
 Login d'un administrateur
+
 Creation d'utilisateur/technician
+
 Login d'un utilisateur/technician
+
 Creation de tickets
+
 Recuperation de tickets (La liste de tickets au complet, au par son ID)
+
 Mettre a jour un ticket
+
 Suppression d'un ticket
 
 Creation de base de donnees
